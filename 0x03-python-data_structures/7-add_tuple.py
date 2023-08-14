@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-# 7-add_tuple.py
-
 
 def add_tuple(tuple_a=(), tuple_b=()):
     """Add two tuples."""
