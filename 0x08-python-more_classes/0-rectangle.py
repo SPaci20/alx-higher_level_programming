@@ -4,4 +4,6 @@
 
 class Rectangle:
     """This is a simple rectangl."""
-    pass
+
+    def __init__(self):
+        pass
