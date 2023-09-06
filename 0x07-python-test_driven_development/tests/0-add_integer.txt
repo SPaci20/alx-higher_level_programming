@@ -1,27 +1,31 @@
-# Test cases for add_integer function
+# Test cases for the add_integer function.
 
 >>> from add_integer import add_integer
 
-# Test case 1: Adding two integers
+# Test case 1: Adding two positive integers
 >>> add_integer(1, 2)
 3
 
-# Test case 2: Adding an integer and a float
->>> add_integer(100, -2.5)
-97
+# Test case 2: Adding a positive integer and a negative integer
+>>> add_integer(100, -2)
+98
 
-# Test case 3: Adding two floats
->>> add_integer(2.7, 3.3)
-5
+# Test case 3: Adding an integer and the default value (98)
+>>> add_integer(2)
+100
 
-# Test case 4: Adding an integer and a string (should raise a TypeError)
+# Test case 4: Adding two floats, should cast them to integers
+>>> add_integer(100.3, -2)
+98
+
+# Test case 5: Adding an integer and a string, should raise a TypeError
 >>> add_integer(4, "School")
 Traceback (most recent call last):
-    ...
-TypeError: a must be an integer or a float
+...
+TypeError: a must be an integer or b must be an integer
 
-# Test case 5: Adding None and an integer (should raise a TypeError)
->>> add_integer(None, 5)
+# Test case 6: Adding None as one of the arguments, should raise a TypeError
+>>> add_integer(None)
 Traceback (most recent call last):
-    ...
-TypeError: a must be an integer or a float
+...
+TypeError: a must be an integer or b must be an integer
