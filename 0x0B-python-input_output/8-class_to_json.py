@@ -4,8 +4,6 @@
 
 def class_to_json(obj):
     """initializes an empty dictionary."""
-
-
     serialized_obj = {}
     for attr_name in dir(obj):
         if not attr_name.startswith('_'):
