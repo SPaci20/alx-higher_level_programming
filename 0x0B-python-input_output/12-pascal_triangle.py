@@ -7,16 +7,16 @@ def pascal_triangle(n):
     if n <= 0:
         return []
 
-    triangle = [[1]]
-
-    for i in range(1, n):
-        row = [1]
-
-    for j in range(1, i):
-        prev_row = triangle[i - 1]
-        new_value = prev_row[j - 1] + prev_row[j]
-        row.append(new_value)
-
-        row.append(1)
+    triangle = []
+    for i in range(n):
+        row = []
+        for j in range(i + 1):
+            if j == 0 or j == i:
+                row.append(1)
+            else:
+                prev_row = triangle[i - 1]
+                value = prev_row[j - 1] + prev_row[j]
+                row.append(value)
         triangle.append(row)
+
     return triangle
