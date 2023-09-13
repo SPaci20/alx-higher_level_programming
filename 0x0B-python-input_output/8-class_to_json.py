@@ -1,13 +1,7 @@
 #!/usr/bin/python3
-"""function that returns the dictionary description."""
+"""Defines a Python class-to-JSON function."""
 
 
 def class_to_json(obj):
-    """initializes an empty dictionary."""
-    serialized_obj = {}
-    for attr_name in dir(obj):
-        if not attr_name.startswith('_'):
-            attr_value = getattr(obj, attr_name)
-            if isinstance(attr_value, (list, dict, str, int, bool)):
-                serialized_obj[attr_name] = attr_value
-    return serialized_obj
+    """Return the dictionary represntation of a simple data structure."""
+    return obj.__dict__
