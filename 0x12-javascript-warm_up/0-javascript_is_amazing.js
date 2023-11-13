@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-let myVar = "Javascript is amazing";
+const myVar = 'Javascript is amazing';
 
-function logName() {
-    console.log(myVar);
+function logName () {
+  console.log(myVar);
 }
 
 logName();
