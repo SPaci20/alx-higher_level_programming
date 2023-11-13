@@ -1,9 +1,5 @@
 #!/usr/bin/env node
+// Print "Javascript is amazing"
 
 const myVar = 'Javascript is amazing';
-
-function logName () {
-  console.log(myVar);
-}
-
-logName();
+console.log(myVar);
