@@ -1,32 +1,22 @@
 #!/usr/bin/python3
 """
-Script fetches the status of https://alx-intranet.hbtn.io
+Script that:
+- fetches https://alx-intranet.hbtn.io/status.
+- uses urllib package
 """
 
+import urllib.error
 import urllib.request
 
-
-def fetch_status(url):
-    """
-    Fetches the status of the given URL and displays response.
-
-    Args:
-        url (str): The URL to fetch.
-
-    Returns:
-        None
-    """
-    with urllib.request.urlopen(url) as response:
-        # Read the body of the response
-        content = response.read()
-
-        # Display information about the response
-        print("Body response:")
-        print("    - type:", type(content))
-        print("    - content:", content)
-        print("    - utf8 content:", content.decode('utf-8'))
-
-
-if __name__ == "__main__":
-    url = 'https://alx-intranet.hbtn.io/status'
-    fetch_status(url)
+if __name__ == '__main__':
+    try:
+        with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as res:
+            content = res.read()
+            print("Body response:")
+            print("\t- type: {}".format(type(content)))
+            print("\t- content: {}".format(content))
+            print("\t- utf8 content: {}".format(content.decode('utf-8')))
+    except urllib.error.URLError as e:
+        print(f"Error: {e.reason}")
+    except urllib.error.HTTPError as e:
+        print(f"HTTP Error: {e.code} - {e.reason}")
